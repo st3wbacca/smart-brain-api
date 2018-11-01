@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-	res.send(database.users); // we never made a new version of this
+	res.send('database.users');
 });
 
 // just to show req & res are automatically sent thru
