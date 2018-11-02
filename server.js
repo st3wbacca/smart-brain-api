@@ -13,7 +13,7 @@ const image = require('./controllers/image');
 const db = knex({
 	client: 'pg',
 	connection: {
-		host : process.env.DATABASE_URL,
+		connectionString: process.env.DATABASE_URL,
   		ssl: true,
 	}
 });
@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-	res.send('it is working!!!');
+	res.send(process.env.DATABASE_URL);
 });
 
 // example of injection
