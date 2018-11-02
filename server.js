@@ -27,16 +27,16 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-	res.send('database.users');
+	res.send(`app is getting on port ${PORT}`);
 });
 
-// just to show req & res are automatically sent thru
+// example of injection
 app.post('/signin', signIn.handleSignIn(db, bcrypt));
 
 // alternate way to achieve the same thing
 app.post('/register', (req, res) => {register.handleRegister(db, bcrypt)(req, res)});
 
-// not changing this one so i have an example of the old way
+// no injection here
 app.get('/profile/:id',(req, res) => {
 	profile.handleProfileGet(req, res, db);
 });
@@ -46,5 +46,5 @@ app.put('/image', image.handleImage(db));
 app.post('/imageurl', image.handleApiCall);
 
 app.listen(PORT, () => {
-	console.log('app is running on port ' + PORT);
+	console.log(`app is listening on port ${PORT}`);
 });
