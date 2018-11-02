@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-	res.send(`app is getting on port ${PORT}`);
+	res.send('it is working!!!');
 });
 
 // example of injection
