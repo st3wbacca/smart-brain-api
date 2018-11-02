@@ -14,8 +14,8 @@ const handleSignIn = (db, bcrypt) => (req, res) => {
 					.where('email', '=', email)
 					.then(users => {
 						res.json(users[0]);
-				})
-				.catch(err => res.status(400).json('unable to get user'));
+					})
+					.catch(err => res.status(400).json('unable to get user'));
 			} else {
 				res.status(400).json('wrong credentials');
 			}
@@ -23,6 +23,6 @@ const handleSignIn = (db, bcrypt) => (req, res) => {
 		.catch(err => res.status(400).json('wrong credentials'));
 };
 
-module.exports ={
+module.exports = {
 	handleSignIn: handleSignIn,
 };
