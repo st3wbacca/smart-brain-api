@@ -1,11 +1,9 @@
-// IMPORTS
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 
-// CONTROLLERS
 const signin = require('./controllers/signin');
 const register = require('./controllers/register');
 const profile = require('./controllers/profile');
